@@ -1,0 +1,198 @@
+@import "reset";
+@import "rules";
+
+body{
+    display: flex;
+    .car-img{
+        width:100vw;
+        height:100vh;        
+        position: absolute;
+        background-image: url("https://i.pinimg.com/originals/e5/9a/c1/e59ac1de4ab81fc0a9808e24237486d6.jpg");
+        background-size:cover;
+        filter: blur(2px) grayscale(100%) brightness(30%);
+        z-index: -2;        
+    }
+    .black-img{
+        width:100vw;
+        height: 100vh;
+        background-image: url("https://images.vexels.com/media/users/3/157944/isolated/preview/b6a72d46f16e457ccfacf410edc462a6-dise-ntilde-o-de-cuadr-iacute-cula-de-puntos-by-vexels.png");
+        background-size: 800px;
+        background-repeat: repeat;
+        opacity: .7;
+        position:absolute;
+        z-index: -1;        
+    }
+    .width-car{
+        width: 100%;
+        height: 100%;
+        background-image: url("https://i.pinimg.com/originals/e5/9a/c1/e59ac1de4ab81fc0a9808e24237486d6.jpg");
+        clip-path: inset(350px 0px 150px 0px);
+        background-size:cover;
+        opacity: .3;
+        filter: blur(1px);
+        filter: contrast(150%);
+        position: absolute;
+        z-index: -1; 
+    }
+    nav{            
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width:350px;
+        height:100vh;
+        background: rgb(0,0,0);
+        background: linear-gradient(90deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.4) 50%,  rgba(0,0,0,0) 100%);
+        .login{
+            display: flex;
+            flex-direction: column;
+            margin-top: 70px;
+            margin-left:60px;
+            .container-buttons{
+                button{
+                    @include btn-login
+                }
+            }
+            .line1{
+                margin-top: 50px;
+                margin-left: 40px;
+                width: 140px;
+                height:2px;
+                background-color: #e60023;
+            } 
+            .line2{
+                margin-top: 20px;
+                margin-left: 20px;
+                width: 180px;
+                height:4px;
+                background-color: #df354f60;
+            } 
+            .line3{
+                margin-top: 20px;
+                width: 218px;
+                height:10px;
+                background-color: #6b3e3e50;
+            } 
+        }
+        .menu-nav{
+            width: 218px;
+            height: 300px;
+            margin-left: 60px;
+            margin-bottom: 40px;
+            background-color: #74747430;
+            ul{                    
+                padding: 15px;
+                li{
+                    @include menu-li-a;                       
+                }
+            }
+        }                       
+        .social{
+            i{
+                @include btn-social;
+            }
+        }
+    }//end nav        
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        object-fit: cover;
+        .logo-subtitle{
+            display: flex;
+            flex-direction: column;
+            .logo{
+                a{
+                    font-family: 'Zen Dots', cursive;
+                margin-top:30px;
+                margin-left: 20vw;
+                font-size: 4vw;
+                color: #e60023;
+                text-shadow: 0px 0px 3px #FFFFFF;
+                opacity: .6;
+                }                
+            }
+            .subtitle{                
+                @include arial;
+                font-size: 1.5vw;
+                margin-top: 5px;
+                margin-left: 5vw;
+                font-weight: bold;
+                text-decoration-line:overline;
+                text-shadow: 1px 1px 0px #000000;
+                color: #FFFFFF50;
+            }
+        }
+        .container-login{
+            display: flex;            
+            justify-self: center;
+            width: 87%;
+            height: 80%;
+            margin-left: 5vw;
+            margin-right: 5vw;
+            .register{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 70px;
+                width: 50%;
+                height: 80%;
+                p{
+                    @include arial();
+                    font-size: 35px;
+                    font-weight: 600;
+                    color: #FFFFFF;
+                    margin-top: 15px;
+                }             
+                .datos{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 20px;
+                    p{
+                        text-align: center;
+                        margin-top: 30px;
+                        font-size: 15px;
+                        @include roboto;
+                        color: #FFFFFF90;
+                        text-align: center;                      
+                    }
+                    input{
+                        @include input;
+                    }
+                }
+            }
+            .sign-in{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 70px;
+                width: 50%;
+                height: 80%;                  
+                p{
+                    @include arial();
+                    font-size: 35px;
+                    font-weight: 600;
+                    color: #FFFFFF;
+                    margin-top: 15px;
+                }
+                .user-pass{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 20px;
+                    p{
+                        text-align: center;
+                        margin-top: 30px;
+                        font-size: 15px;
+                        @include roboto;
+                        color: #FFFFFF90;
+                        text-align: center;
+                    }
+                    input{
+                        @include input;
+                    }
+                }
+            }
+        }
+    }        
+
+}
